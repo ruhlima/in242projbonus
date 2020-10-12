@@ -5,7 +5,7 @@ import json
 
 print("Conectando ao MQTT Broker...")
 mqtt_client = mqtt.Client()
-mqtt_client.connect('localhost', 1883)
+mqtt_client.connect('34.234.179.184', 1883)
 
 #Como foi tratado bastante sobre o caso do COVID-19, a ideia no código seria para ter o controle da quantidade de pessoas
 #em um ambiente, visto que temos restrição no número de pessoas em certos lugares fechados.
