@@ -10,10 +10,10 @@ services:
     image: mongo
     ports:
       - "27018:27017"
-#  producer:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
   consumer:
     build:
       context: .
