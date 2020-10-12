@@ -7,9 +7,10 @@ print("Conectando ao MQTT Broker...")
 mqtt_client = mqtt.Client()
 mqtt_client.connect('localhost', 1883)
 
-#Como foi tratado bastante sobre o caso do COVID-19, a ideia no código seria para ter a quantidade de pessoas
+#Como foi tratado bastante sobre o caso do COVID-19, a ideia no código seria para ter o controle da quantidade de pessoas
 #em um ambiente, visto que temos restrição no número de pessoas em certos lugares fechados.
-#com isso o programa incrementa (quando alguém entra pela porta) e decrementa (quando sai pela porta).
+#com isso o programa incrementa (quando alguém entra pela porta) e decrementa (quando sai pela porta), e quando o valor
+# for menor ou igual a 0, informa que não há cliente no ambiente.
 
 from pynput import keyboard
 
@@ -44,7 +45,7 @@ def on_press(key):  # The function that's called when a key is pressed
 
 def main():
     with keyboard.Listener(on_press=on_press) as listener:  # Setup the listener
-         listener.join()                                      # Join the thread to the main thread
+         listener.join()                                     # Join the thread to the main thread
 
 if __name__ == '__main__':
     main()
