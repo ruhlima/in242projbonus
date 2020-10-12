@@ -3,7 +3,7 @@ from pymongo import MongoClient
 import json
 import datetime
 
-mongo_client = MongoClient('localhost',27018)
+mongo_client = MongoClient('34.234.179.184',27018)
 mongo_db = mongo_client['in242']
 mongo_collection = mongo_db['count']
 
@@ -17,7 +17,7 @@ def msg_recebida(mqtt_client, obj, msg):
 
 print('Conectando ao Broker MQTT...')
 mqtt_client = mqtt.Client()
-mqtt_client.connect('localhost', 1883)
+mqtt_client.connect('34.234.179.184', 1883)
 mqtt_client.on_message = msg_recebida
 mqtt_client.subscribe('in242')
 mqtt_client.loop_forever()
